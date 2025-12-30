@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>에그앤씨드 2026 새해 첫 특별 기획전</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
@@ -32,7 +34,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header Navigation -->
+    <!-- 네비게이션 -->
     <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 h-16 flex items-center shadow-sm">
         <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
             <div class="text-2xl font-black tracking-tighter text-[#4a5d3a]">EGG & SEED</div>
@@ -41,11 +43,11 @@
                 <a href="#products" class="hover:text-[#4a5d3a]">Products</a>
                 <a href="#calculator" class="hover:text-[#4a5d3a]">Benefit</a>
             </div>
-            <button class="bg-[#4a5d3a] text-white px-6 py-2 rounded-full text-xs font-bold hover:shadow-lg transition-all">문의하기</button>
+            <button class="bg-[#4a5d3a] text-white px-6 py-2 rounded-full text-xs font-bold hover:shadow-lg transition-all">구매 문의</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- 히어로 섹션 -->
     <section id="intro" class="pt-32 pb-20 px-6 bg-white border-b border-gray-50">
         <div class="max-w-5xl mx-auto text-center">
             <span class="inline-block px-4 py-1 rounded-full bg-[#f1e5ac] text-[#4a3b00] text-[10px] font-bold mb-6 tracking-widest">EST. 2026 NEW YEAR</span>
@@ -64,7 +66,7 @@
         </div>
     </section>
 
-    <!-- Value Insights -->
+    <!-- 가치 분석 섹션 -->
     <section class="py-24 px-6">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div class="space-y-8">
@@ -92,7 +94,7 @@
         </div>
     </section>
 
-    <!-- Product Explorer -->
+    <!-- 제품 탐색 섹션 -->
     <section id="products" class="py-24 bg-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
@@ -103,7 +105,7 @@
         </div>
     </section>
 
-    <!-- Smart Calculator -->
+    <!-- 스마트 계산기 섹션 -->
     <section id="calculator" class="py-24 gradient-bg px-6 text-white overflow-hidden relative">
         <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -mr-48 -mt-48"></div>
         <div class="max-w-5xl mx-auto relative z-10 text-center">
@@ -131,7 +133,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 푸터 -->
     <footer class="py-20 px-6 bg-gray-900 text-gray-400">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 text-center md:text-left">
             <div>
@@ -140,21 +142,20 @@
             </div>
             <div>
                 <p class="text-white font-bold mb-2">행사 기간: 2026. 01. 06 ~ 01. 31</p>
-                <p class="text-[10px] opacity-30 uppercase tracking-[0.2em] mt-8">© 2026 EGG & SEED PREMIUM ORGANIC.</p>
+                <p class="text-[10px] opacity-30 uppercase mt-8">© 2026 EGG & SEED PREMIUM ORGANIC.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // 업로드하신 영문 파일명으로 모두 교체하였습니다.
-        // 웹 브라우저 및 깃허브에서 가장 안정적으로 작동하는 방식입니다.
+        // 업로드하신 영문 파일명 리스트입니다. (가장 중요)
         const products = [
             {
                 id: "p1",
                 name: "유기농 녹차 사탕",
                 sub: "스윗앤그린 (가당)",
                 desc: "청정 녹차의 상쾌함으로 집중력이 필요한 순간의 리프레시를 돕습니다.",
-                img: "green_c800g.jpg", // 영문 파일명
+                img: "green_c800g.jpg", // 이 이름의 파일이 업로드되어 있어야 함
                 emoji: "🌿",
                 accent: "#f1f4ee",
                 tag: "BEST"
@@ -164,7 +165,7 @@
                 name: "유기농 카라멜",
                 sub: "쫀득하고 부드러운 달콤함",
                 desc: "유기농 원료 본연의 풍미가 담긴 기분 좋은 에너지 한 알.",
-                img: "green_no800g.jpg", // 영문 파일명
+                img: "green_no800g.jpg", // 이 이름의 파일이 업로드되어 있어야 함
                 emoji: "🍬",
                 accent: "#fffcf0",
                 tag: "NEW"
@@ -174,7 +175,7 @@
                 name: "유기농 황칠 사탕",
                 sub: "지친 마음을 위한 휴식",
                 desc: "귀한 황칠의 성분을 담아 스트레스와 피로에 지친 일상에 평온을 드립니다.",
-                img: "green-sugar800g.jpg", // 영문 파일명
+                img: "green-sugar800g.jpg", // 이 이름의 파일이 업로드되어 있어야 함
                 emoji: "🪵",
                 accent: "#f9f7f2",
                 tag: "PREMIUM"
@@ -184,7 +185,7 @@
                 name: "유기농 쌍쌍화 사탕",
                 sub: "전통의 기운을 담은 활력",
                 desc: "진한 쌍화의 정수로 기관지 건강과 일상의 활력을 동시에 채워줍니다.",
-                img: "ssangssang800g.jpg", // 영문 파일명
+                img: "ssangssang800g.jpg", // 이 이름의 파일이 업로드되어 있어야 함
                 emoji: "🍯",
                 accent: "#fdf4f4",
                 tag: "HEALTH"
@@ -207,16 +208,20 @@
                 
                 card.innerHTML = `
                     <div class="w-full aspect-[3/4] rounded-[35px] mb-8 flex items-center justify-center relative overflow-hidden bg-gray-50" style="background-color: ${p.accent}">
+                        <!-- 이미지 로드 -->
                         <img src="${p.img}" alt="${p.name}" 
                              class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform" 
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        
+                        <!-- 이미지가 없을 때만 나타나는 이모지 -->
                         <span class="text-7xl hidden">${p.emoji}</span>
-                        ${p.tag ? `<span class="absolute top-5 right-5 text-[9px] font-black bg-white px-3 py-1 rounded-full text-gray-800 shadow-sm">${p.tag}</span>` : ''}
+                        
+                        ${p.tag ? `<span class="absolute top-5 right-5 text-[9px] font-black bg-white px-3 py-1 rounded-full text-gray-800 shadow-sm border border-gray-50">${p.tag}</span>` : ''}
                     </div>
                     <div class="text-center">
                         <h3 class="text-xl font-black text-gray-800 mb-1">${p.name}</h3>
-                        <p class="text-[10px] text-green-700 font-black mb-5 tracking-tighter">${p.sub}</p>
-                        <p class="text-xs text-gray-400 font-medium px-2">${p.desc}</p>
+                        <p class="text-[10px] text-green-700 font-black mb-5 tracking-tighter uppercase opacity-60">${p.sub}</p>
+                        <p class="text-xs text-gray-400 font-medium px-2 leading-relaxed">${p.desc}</p>
                     </div>
                 `;
                 container.appendChild(card);
