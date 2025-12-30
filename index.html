@@ -140,20 +140,21 @@
             </div>
             <div>
                 <p class="text-white font-bold mb-2">행사 기간: 2026. 01. 06 ~ 01. 31</p>
-                <p class="text-xs opacity-30 uppercase tracking-[0.2em] mt-8">© 2026 EGG & SEED PREMIUM ORGANIC.</p>
+                <p class="text-[10px] opacity-30 uppercase tracking-[0.2em] mt-8">© 2026 EGG & SEED PREMIUM ORGANIC.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // 업로드된 실제 파일명으로 데이터 매핑
+        // 업로드하신 영문 파일명으로 모두 교체하였습니다.
+        // 웹 브라우저 및 깃허브에서 가장 안정적으로 작동하는 방식입니다.
         const products = [
             {
                 id: "p1",
                 name: "유기농 녹차 사탕",
                 sub: "스윗앤그린 (가당)",
                 desc: "청정 녹차의 상쾌함으로 집중력이 필요한 순간의 리프레시를 돕습니다.",
-                img: "green_sugar800g.png", 
+                img: "green_c800g.jpg", // 영문 파일명
                 emoji: "🌿",
                 accent: "#f1f4ee",
                 tag: "BEST"
@@ -163,7 +164,7 @@
                 name: "유기농 카라멜",
                 sub: "쫀득하고 부드러운 달콤함",
                 desc: "유기농 원료 본연의 풍미가 담긴 기분 좋은 에너지 한 알.",
-                img: "녹차 카라멜 800g.jpg",
+                img: "green_no800g.jpg", // 영문 파일명
                 emoji: "🍬",
                 accent: "#fffcf0",
                 tag: "NEW"
@@ -173,7 +174,7 @@
                 name: "유기농 황칠 사탕",
                 sub: "지친 마음을 위한 휴식",
                 desc: "귀한 황칠의 성분을 담아 스트레스와 피로에 지친 일상에 평온을 드립니다.",
-                img: "황칠 사탕 800g.jpg",
+                img: "green-sugar800g.jpg", // 영문 파일명
                 emoji: "🪵",
                 accent: "#f9f7f2",
                 tag: "PREMIUM"
@@ -183,7 +184,7 @@
                 name: "유기농 쌍쌍화 사탕",
                 sub: "전통의 기운을 담은 활력",
                 desc: "진한 쌍화의 정수로 기관지 건강과 일상의 활력을 동시에 채워줍니다.",
-                img: "쌍쌍화 사탕 800g.jpg",
+                img: "ssangssang800g.jpg", // 영문 파일명
                 emoji: "🍯",
                 accent: "#fdf4f4",
                 tag: "HEALTH"
@@ -204,12 +205,9 @@
                 const card = document.createElement('div');
                 card.className = "flex flex-col items-center bg-white p-10 rounded-[45px] border border-gray-100 shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer";
                 
-                // 파일명 인코딩 (띄어쓰기 처리)
-                const safeImgPath = encodeURIComponent(p.img);
-                
                 card.innerHTML = `
                     <div class="w-full aspect-[3/4] rounded-[35px] mb-8 flex items-center justify-center relative overflow-hidden bg-gray-50" style="background-color: ${p.accent}">
-                        <img src="${safeImgPath}" alt="${p.name}" 
+                        <img src="${p.img}" alt="${p.name}" 
                              class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform" 
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <span class="text-7xl hidden">${p.emoji}</span>
@@ -273,4 +271,3 @@
     </script>
 </body>
 </html>
-
