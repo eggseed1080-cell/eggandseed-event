@@ -9,304 +9,277 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #5a6b4d;
+            --primary-green: #4a5d3a;
             --accent-gold: #d4af37;
-            --bg-neutral: #f9f8f4;
+            --soft-cream: #f9f8f4;
         }
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: var(--bg-neutral);
-            color: #334155;
-            overflow-x: hidden;
+            background-color: var(--soft-cream);
+            color: #2d3748;
         }
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 450px;
             height: 300px;
-            max-height: 350px;
+            margin: auto;
         }
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
+        .gradient-bg {
+            background: linear-gradient(135deg, #4a5d3a 0%, #5a6b4d 100%);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #4a5d3a 0%, #d4af37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .price-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-            <div class="text-xl font-black tracking-tighter text-[#5a6b4d]">EGG & SEED</div>
-            <div class="hidden md:flex space-x-8 text-sm font-bold text-gray-500">
-                <a href="#intro" class="hover:text-[#5a6b4d] transition-colors">기획전 소개</a>
-                <a href="#products" class="hover:text-[#5a6b4d] transition-colors">상품 보기</a>
-                <a href="#calculator" class="hover:text-[#5a6b4d] transition-colors">혜택 계산기</a>
+    <!-- Header Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 h-16 flex items-center shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter text-[#4a5d3a]">EGG & SEED</div>
+            <div class="hidden md:flex space-x-10 text-sm font-bold text-gray-400">
+                <a href="#intro" class="hover:text-[#4a5d3a]">Brand</a>
+                <a href="#products" class="hover:text-[#4a5d3a]">Products</a>
+                <a href="#calculator" class="hover:text-[#4a5d3a]">Benefit</a>
             </div>
-            <button class="bg-[#5a6b4d] text-white px-5 py-2 rounded-full text-xs font-bold shadow-md hover:bg-[#4a5d3a] transition-all">문의하기</button>
+            <button class="bg-[#4a5d3a] text-white px-6 py-2 rounded-full text-xs font-bold hover:shadow-lg transition-all">문의하기</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="intro" class="pt-32 pb-20 px-6">
+    <section id="intro" class="pt-32 pb-20 px-6 bg-white border-b border-gray-50">
         <div class="max-w-5xl mx-auto text-center">
-            <div class="inline-block px-4 py-1.5 bg-[#f1e5ac] text-[#4a3b00] rounded-full text-xs font-bold mb-6 fade-in shadow-sm">
-                HAPPY NEW YEAR 2026
-            </div>
-            <h1 class="text-4xl md:text-7xl font-black mb-8 leading-tight tracking-tight fade-in">
-                새해 첫 특별 기획전<br>
-                <span class="gradient-text">프리미엄 유기농 사탕</span>
+            <span class="inline-block px-4 py-1 rounded-full bg-[#f1e5ac] text-[#4a3b00] text-[10px] font-bold mb-6 tracking-widest">EST. 2026 NEW YEAR</span>
+            <h1 class="text-4xl md:text-7xl font-black mb-8 leading-tight tracking-tight text-gray-900">
+                자연이 주는 <span class="text-[#4a5d3a]">건강한 선물</span><br>
+                새해 첫 특별 기획전
             </h1>
-            <p class="text-lg md:text-xl text-gray-500 font-light max-w-2xl mx-auto mb-10 fade-in" style="animation-delay: 0.2s;">
-                희망찬 2026년 병오년의 시작, <br class="hidden md:block">
-                에그앤씨드가 자연의 정직함과 건강한 달콤함을 선물합니다.
+            <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto mb-12">
+                "새해 복 많이 받으세요!"<br>
+                에그앤씨드는 유기농 원재료의 정직함을 담아 당신의 2026년을 응원합니다.
             </p>
-            <div class="flex justify-center space-x-4 fade-in" style="animation-delay: 0.4s;">
-                <a href="#products" class="bg-[#5a6b4d] text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:scale-105 transition-transform">기획 상품 탐색</a>
-                <a href="#calculator" class="bg-white text-[#5a6b4d] border border-gray-100 px-8 py-4 rounded-2xl font-bold shadow-sm hover:bg-gray-50 transition-colors">혜택 확인</a>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#products" class="bg-[#4a5d3a] text-white px-10 py-4 rounded-2xl font-bold shadow-xl hover:bg-[#3a4d2a] transition-all">전체 상품 탐색</a>
+                <a href="#calculator" class="bg-[#f9f8f4] text-[#4a5d3a] px-10 py-4 rounded-2xl font-bold border border-gray-200 hover:bg-white transition-all">혜택 계산하기</a>
             </div>
         </div>
     </section>
 
-    <!-- Insights Section: Data Analysis -->
-    <section class="py-20 bg-white px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-3xl font-black mb-6 text-gray-800">우리가 유기농을<br>선택해야 하는 이유</h2>
-                    <p class="text-gray-500 leading-relaxed mb-8">
-                        에그앤씨드 유기농 사탕은 단순히 단맛을 넘어 '건강한 에너지'를 추구합니다. 인공 감미료와 화학 첨가물을 배제하고, 자연 원재료의 기능성을 극대화하여 현대인의 지친 일상에 리프레시를 제공합니다.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-2xl">
-                            <div class="w-10 h-10 bg-[#5a6b4d] text-white flex items-center justify-center rounded-xl font-bold">01</div>
-                            <span class="font-bold text-gray-700">100% 인증 유기농 원료 사용</span>
-                        </div>
-                        <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-2xl">
-                            <div class="w-10 h-10 bg-[#d4af37] text-white flex items-center justify-center rounded-xl font-bold">02</div>
-                            <span class="font-bold text-gray-700">대용량 800g의 합리적 구성</span>
-                        </div>
+    <!-- Value Insights (Analysis) -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="space-y-8">
+                <h2 class="text-3xl font-black text-gray-800 leading-tight">왜 에그앤씨드<br>유기농 사탕인가요?</h2>
+                <p class="text-gray-500 leading-relaxed text-lg font-light">
+                    단순히 달콤한 간식을 넘어 현대인의 라이프스타일에 맞춘 **'기능성 유기농 사탕'**을 제안합니다. 엄격한 유기농 인증 원료와 대용량 구성으로 프리미엄의 가치를 더했습니다.
+                </p>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm flex items-center space-x-6">
+                        <div class="w-12 h-12 gradient-bg rounded-2xl flex items-center justify-center text-white font-black">01</div>
+                        <p class="font-bold text-gray-700">100% 무화학 인증 원료 사용</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm flex items-center space-x-6">
+                        <div class="w-12 h-12 bg-[#d4af37] rounded-2xl flex items-center justify-center text-white font-black">02</div>
+                        <p class="font-bold text-gray-700">800g 넉넉한 패밀리 사이즈</p>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-[40px] border border-gray-100 shadow-xl">
-                    <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Value Distribution</p>
-                    <div class="chart-container">
-                        <canvas id="valueChart"></canvas>
-                    </div>
+            </div>
+            <div class="bg-white p-12 rounded-[50px] shadow-2xl border border-gray-50 text-center">
+                <p class="text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-8">Premium Value Chart</p>
+                <div class="chart-container">
+                    <canvas id="organicChart"></canvas>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Explorer Section -->
-    <section id="products" class="py-20 px-6">
+    <!-- Product Explorer -->
+    <section id="products" class="py-24 bg-white px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-gray-800 mb-4">대표 유기농 사탕 라인업</h2>
-                <p class="text-gray-500">당신의 상황에 꼭 맞는 프리미엄 건강 사탕을 찾아보세요.</p>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-black text-gray-900 mb-4">유기농 건강 사탕 라인업</h2>
+                <div class="w-12 h-1 gradient-bg mx-auto"></div>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="productGrid">
-                <!-- Products will be injected by JS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="productContainer">
+                <!-- JS handles rendering here -->
             </div>
         </div>
     </section>
 
-    <!-- Calculator Section -->
-    <section id="calculator" class="py-20 bg-[#5a6b4d] px-6 text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
-        <div class="max-w-4xl mx-auto relative z-10">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-black mb-4">스마트 혜택 시뮬레이터</h2>
-                <p class="opacity-80">수량을 선택하면 새해 첫 기획전의 실시간 할인 혜택을 확인하실 수 있습니다.</p>
-            </div>
-
-            <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-12 rounded-[40px] shadow-2xl">
-                <div class="flex flex-col md:flex-row justify-between items-center mb-10 space-y-6 md:space-y-0">
-                    <div class="flex items-center space-x-6">
-                        <button onclick="updateQty(-1)" class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors font-bold text-2xl">－</button>
+    <!-- Smart Calculator -->
+    <section id="calculator" class="py-24 gradient-bg px-6 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+        <div class="max-w-5xl mx-auto relative z-10 text-center">
+            <h2 class="text-4xl font-black mb-12">스마트 혜택 시뮬레이터</h2>
+            
+            <div class="bg-white/10 backdrop-blur-2xl p-10 md:p-16 rounded-[60px] border border-white/20 shadow-3xl">
+                <div class="flex flex-col md:flex-row justify-around items-center gap-12 mb-16">
+                    <div class="flex items-center space-x-10">
+                        <button onclick="changeQty(-1)" class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-3xl font-light hover:bg-white/10 transition-colors">－</button>
                         <div class="text-center">
-                            <span id="qtyDisplay" class="text-6xl font-black">1</span>
-                            <span class="text-xl ml-2 font-bold opacity-80">개</span>
+                            <span id="qtyVal" class="text-8xl font-black">1</span>
+                            <span class="text-2xl font-bold ml-2 opacity-60">개</span>
                         </div>
-                        <button onclick="updateQty(1)" class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors font-bold text-2xl">＋</button>
+                        <button onclick="changeQty(1)" class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-3xl font-light hover:bg-white/10 transition-colors">＋</button>
                     </div>
                     <div class="text-right">
-                        <div id="originalPrice" class="text-lg opacity-50 line-through">115,000원</div>
-                        <div id="finalPrice" class="text-5xl font-black text-[#f1e5ac]">95,000원</div>
-                        <div id="savingsInfo" class="text-sm font-bold text-green-300 mt-2">20,000원 할인 적용 중</div>
+                        <p id="oldPrice" class="text-2xl opacity-40 line-through font-light mb-2">115,000원</p>
+                        <p id="newPrice" class="text-7xl font-black text-[#f1e5ac] tracking-tighter">95,000원</p>
+                        <p id="benefitText" class="mt-4 text-sm font-bold text-green-300 bg-white/10 inline-block px-4 py-1 rounded-full">20,000원 신년 할인 적용 중</p>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
-                        <span class="text-xs uppercase opacity-60 tracking-widest">교차 선택</span>
-                        <p class="font-bold mt-1">4종 제품 중 자유롭게 선택 가능</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div class="p-6 bg-white/5 rounded-3xl border border-white/10">
+                        <p class="opacity-50 mb-2 font-bold tracking-widest text-[10px]">OPTION</p>
+                        <p class="font-bold">4종 제품 중 자유 선택</p>
                     </div>
-                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
-                        <span class="text-xs uppercase opacity-60 tracking-widest">배송 안내</span>
-                        <p class="font-bold mt-1">대용량 800g | 무료 배송 지원</p>
+                    <div class="p-6 bg-white/5 rounded-3xl border border-white/10">
+                        <p class="opacity-50 mb-2 font-bold tracking-widest text-[10px]">DELIVERY</p>
+                        <p class="font-bold">전국 무료 배송 지원</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-3xl border border-white/10">
+                        <p class="opacity-50 mb-2 font-bold tracking-widest text-[10px]">REMARK</p>
+                        <p class="font-bold">800g 실속 대용량</p>
                     </div>
                 </div>
 
-                <div class="mt-10 text-center" id="bestValueBadge" style="display: none;">
-                    <span class="px-6 py-2 bg-[#d4af37] text-white rounded-full font-black animate-pulse">개당 90,000원! 역대급 최저가 달성 ✨</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="py-20 px-6">
-        <div class="max-w-xl mx-auto">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl font-bold text-gray-800">기획전 일정 안내</h3>
-            </div>
-            <div class="space-y-8 relative">
-                <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-100"></div>
-                
-                <div class="relative pl-12">
-                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-[#5a6b4d] rounded-full border-4 border-white shadow-sm"></div>
-                    <h4 class="font-bold text-gray-800">기획전 오픈</h4>
-                    <p class="text-sm text-gray-500">2026. 01. 06 (월)</p>
-                </div>
-                
-                <div class="relative pl-12">
-                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-[#d4af37] rounded-full border-4 border-white shadow-sm"></div>
-                    <h4 class="font-bold text-gray-800">구매 혜택 유지 기간</h4>
-                    <p class="text-sm text-gray-500">2026. 01. 06 ~ 01. 31</p>
-                </div>
-
-                <div class="relative pl-12 opacity-40">
-                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-gray-400 rounded-full border-4 border-white shadow-sm"></div>
-                    <h4 class="font-bold text-gray-800">기획전 종료</h4>
-                    <p class="text-sm text-gray-500">2026. 02. 01 (토)</p>
+                <div id="bonusTag" class="mt-12 opacity-0 transition-opacity">
+                    <span class="bg-[#d4af37] text-white px-8 py-3 rounded-full font-black animate-pulse shadow-lg">✨ 개당 90,000원! 새해 역대급 혜택 달성 ✨</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-16 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+    <footer class="py-20 px-6 bg-gray-900 text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
             <div>
-                <div class="text-2xl font-black text-white mb-6 tracking-tighter">EGG & SEED</div>
-                <p class="max-w-md leading-relaxed">
-                    에그앤씨드는 자연에서 얻은 유기농 원재료만을 고집하여 고객님의 건강한 일상을 연구합니다. 2026년에도 정직한 품질과 가치로 보답하겠습니다.
+                <h3 class="text-2xl font-black text-white mb-6 tracking-tighter">EGG & SEED</h3>
+                <p class="max-w-xs text-sm leading-relaxed opacity-60">
+                    에그앤씨드는 자연의 정직함과 현대인의 건강을 생각합니다. 2026년에도 정직한 품질로 보답하겠습니다.
                 </p>
             </div>
-            <div class="flex flex-col md:items-end justify-center">
-                <p class="text-sm font-bold text-white mb-2">상담 문의: 1588-XXXX</p>
-                <p class="text-xs">상담 시간: 10:00 - 18:00 (주말 공휴일 제외)</p>
-                <div class="mt-8 flex space-x-6 text-xs uppercase tracking-widest">
+            <div class="text-center md:text-right">
+                <p class="text-white font-bold mb-2">행사 기간: 2026. 01. 06 ~ 01. 31</p>
+                <p class="text-sm">문의: 1588-XXXX (평일 10:00~18:00)</p>
+                <div class="mt-10 flex gap-6 text-[10px] uppercase tracking-[0.2em] font-bold">
                     <span>Organic Certified</span>
-                    <span>•</span>
-                    <span>Premium Selection</span>
+                    <span>Premium Choice</span>
+                    <span>Family Gift</span>
                 </div>
-                <p class="mt-8 text-[10px] opacity-40 italic">© 2026 EGG & SEED PREMIUM. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Data Definitions
+        // 제품 데이터 (실제 파일명을 변수에 정확히 담습니다)
+        // 공백이 포함된 파일명은 추후 encodeURI를 통해 안전하게 처리합니다.
         const products = [
             {
+                id: "p1",
                 name: "유기농 녹차 사탕",
-                sub: "스윗앤그린 (가당·무가당)",
-                desc: "집중력이 필요한 순간, 녹차의 청량함으로 머리를 맑게.",
-                img: "green_c800g.png", //녹차 사진
+                sub: "스윗앤그린 (가당)",
+                desc: "청정 녹차의 상쾌함으로 집중력이 필요한 순간의 리프레시를 돕습니다.",
+                img: "caramel.jpg", // 이 부분의 이름이 실제 파일과 정확히 같아야 함
                 emoji: "🌿",
-                bg: "#f1f4ee",
-                border: "#e2eadd",
-               
+                accent: "#f1f4ee",
                 tag: "BEST"
-                
             },
             {
+                id: "p2",
                 name: "유기농 카라멜",
-                sub: "부드러운 유기농의 정수",
-                desc: "쫀득한 식감과 깊은 풍미로 전하는 기분 좋은 당 충전.",
+                sub: "쫀득하고 부드러운 달콤함",
+                desc: "유기농 원료 본연의 풍미가 담긴 기분 좋은 에너지 한 알.",
+                img: "녹차 카라멜 800g.jpg",
                 emoji: "🍬",
-                bg: "#fffcf0",
-                border: "#f5ead5",
-                img: "caramel.jpg",//무가당
+                accent: "#fffcf0",
                 tag: "NEW"
-                
             },
             {
+                id: "p3",
                 name: "유기농 황칠 사탕",
-                sub: "전통의 평온함을 담은 한 알",
-                desc: "지친 마음을 어루만지는 황칠의 귀한 성분으로 전하는 휴식.",
+                sub: "지친 마음을 위한 휴식",
+                desc: "귀한 황칠의 성분을 담아 스트레스와 피로에 지친 일상에 평온을 드립니다.",
+                img: "황칠 사탕 800g.jpg",
                 emoji: "🪵",
-                bg: "#f9f7f2",
-                border: "#f1e8d5",
+                accent: "#f9f7f2",
                 tag: "PREMIUM"
             },
             {
+                id: "p4",
                 name: "유기농 쌍쌍화 사탕",
-                sub: "진하고 깊은 기운의 에너지",
-                desc: "기관지가 답답할 때, 몸의 기운이 떨어질 때 채워주는 전통의 맛.",
+                sub: "전통의 기운을 담은 활력",
+                desc: "진한 쌍화의 정수로 기관지 건강과 일상의 활력을 동시에 채워줍니다.",
+                img: "쌍쌍화 사탕 800g.jpg",
                 emoji: "🍯",
-                bg: "#fdf4f4",
-                border: "#f5e2e2",
+                accent: "#fdf4f4",
                 tag: "HEALTH"
             }
         ];
 
-        let state = {
-            qty: 1,
-            unitPrice1: 95000,
-            unitPrice2: 90000,
-            originalUnit: 115000
-        };
+        let qty = 1;
 
-        // Initialize UI
+        // 초기 실행
         window.onload = function() {
             renderProducts();
-            initChart();
-            updateCalculator();
+            initValueChart();
+            updatePricing();
         };
 
         function renderProducts() {
-            const grid = document.getElementById('productGrid');
-            products.forEach((p, idx) => {
+            const container = document.getElementById('productContainer');
+            products.forEach(p => {
                 const card = document.createElement('div');
-                card.className = "flex flex-col items-center bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 cursor-pointer group";
+                card.className = "flex flex-col items-center bg-white p-10 rounded-[45px] border border-gray-100 shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer";
+                
+                // 파일명 인코딩 (공백 처리)
+                const safeImgPath = encodeURI(p.img);
+                
                 card.innerHTML = `
-                    <div class="w-full aspect-square rounded-2xl mb-6 flex items-center justify-center transition-colors relative overflow-hidden" style="background-color: ${p.bg}; border: 1px solid ${p.border}">
-                         <span class="text-6xl group-hover:scale-110 transition-transform">${p.emoji}</span>
-                         ${p.tag ? `<span class="absolute top-3 right-3 text-[9px] font-bold bg-white px-2 py-1 rounded-full text-gray-800 shadow-sm">${p.tag}</span>` : ''}
+                    <div class="w-full aspect-[3/4] rounded-[35px] mb-8 flex items-center justify-center relative overflow-hidden bg-gray-50 transition-colors group-hover:bg-opacity-50" style="background-color: ${p.accent}">
+                        <!-- 이미지 태그 -->
+                        <img src="${safeImgPath}" alt="${p.name}" 
+                             class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform" 
+                             onload="console.log('이미지 로드 성공: ${p.img}')"
+                             onerror="handleImageError(this, '${p.emoji}', '${p.img}')">
+                        
+                        <!-- 대체 이모지 (초기엔 숨김) -->
+                        <span class="text-7xl hidden">${p.emoji}</span>
+                        
+                        ${p.tag ? `<span class="absolute top-5 right-5 text-[9px] font-black bg-white px-3 py-1 rounded-full text-gray-800 shadow-sm border border-gray-50">${p.tag}</span>` : ''}
                     </div>
                     <div class="text-center">
                         <h3 class="text-xl font-black text-gray-800 mb-1">${p.name}</h3>
-                        <p class="text-xs text-green-700 font-bold mb-4">${p.sub}</p>
-                        <p class="text-sm text-gray-400 leading-relaxed font-light">${p.desc}</p>
+                        <p class="text-[10px] text-green-700 font-black mb-5 tracking-tighter opacity-80">${p.sub}</p>
+                        <p class="text-xs text-gray-400 leading-relaxed font-medium px-2">${p.desc}</p>
                     </div>
                 `;
-                grid.appendChild(card);
+                container.appendChild(card);
             });
         }
 
-        function initChart() {
-            const ctx = document.getElementById('valueChart').getContext('2d');
+        // 이미지 로드 실패 시 디버깅 정보 출력 및 이모지로 전환
+        function handleImageError(imgTag, emoji, originalName) {
+            console.error(`이미지 로드 실패: "${originalName}" 파일을 찾을 수 없습니다. 파일명, 확장자, 위치를 확인하세요.`);
+            imgTag.style.display = 'none';
+            const emojiSpan = imgTag.nextElementSibling;
+            if (emojiSpan) {
+                emojiSpan.style.display = 'block';
+            }
+        }
+
+        function initValueChart() {
+            const ctx = document.getElementById('organicChart').getContext('2d');
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['유기농 원료(안전성)', '기능성 성분', '맛의 밸런스', '보관 및 편의성'],
+                    labels: ['유기농 인증 원료', '기능성 추출물', '가심비(대용량)', '선물용 프리미엄'],
                     datasets: [{
                         data: [45, 30, 15, 10],
-                        backgroundColor: ['#5a6b4d', '#d4af37', '#7a8c6d', '#ebedee'],
+                        backgroundColor: ['#4a5d3a', '#d4af37', '#7a8c6d', '#f1e5ac'],
                         borderWidth: 0,
                         hoverOffset: 20
                     }]
@@ -315,83 +288,43 @@
                     maintainAspectRatio: false,
                     cutout: '75%',
                     plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                usePointStyle: true,
-                                padding: 20,
-                                font: { size: 11, family: 'Noto Sans KR' }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.label || '';
-                                    if (label) label += ': ';
-                                    if (context.parsed !== null) label += context.parsed + '%';
-                                    return label;
-                                }
-                            }
-                        }
+                        legend: { position: 'bottom', labels: { usePointStyle: true, padding: 25, font: { size: 12, family: 'Noto Sans KR', weight: '500' } } }
                     }
                 }
             });
         }
 
-        // Calculator Logic
-        function updateQty(change) {
-            state.qty = Math.max(1, state.qty + change);
-            updateCalculator();
+        function changeQty(n) {
+            qty = Math.max(1, qty + n);
+            updatePricing();
         }
 
-        function updateCalculator() {
-            const display = document.getElementById('qtyDisplay');
-            const originalPriceEl = document.getElementById('originalPrice');
-            const finalPriceEl = document.getElementById('finalPrice');
-            const savingsEl = document.getElementById('savingsInfo');
-            const bestBadge = document.getElementById('bestValueBadge');
+        function updatePricing() {
+            const qtyEl = document.getElementById('qtyVal');
+            const oldPriceEl = document.getElementById('oldPrice');
+            const newPriceEl = document.getElementById('newPrice');
+            const benefitEl = document.getElementById('benefitText');
+            const bonusBadge = document.getElementById('bonusTag');
 
-            display.innerText = state.qty;
+            qtyEl.innerText = qty;
             
-            let totalOriginal = state.originalUnit * state.qty;
-            let totalFinal;
-            let discount;
+            const originalUnit = 115000;
+            const saleUnit = (qty >= 2) ? 90000 : 95000;
 
-            if (state.qty >= 2) {
-                totalFinal = state.unitPrice2 * state.qty;
-                bestBadge.style.display = 'block';
+            const totalOld = originalUnit * qty;
+            const totalNew = saleUnit * qty;
+            const totalBenefit = totalOld - totalNew;
+
+            oldPriceEl.innerText = totalOld.toLocaleString() + "원";
+            newPriceEl.innerText = totalNew.toLocaleString() + "원";
+            benefitEl.innerText = `${totalBenefit.toLocaleString()}원 신년 특별 할인 적용 중`;
+
+            if (qty >= 2) {
+                bonusBadge.classList.replace('opacity-0', 'opacity-100');
             } else {
-                totalFinal = state.unitPrice1 * state.qty;
-                bestBadge.style.display = 'none';
+                bonusBadge.classList.replace('opacity-100', 'opacity-0');
             }
-
-            discount = totalOriginal - totalFinal;
-
-            originalPriceEl.innerText = totalOriginal.toLocaleString() + "원";
-            finalPriceEl.innerText = totalFinal.toLocaleString() + "원";
-            savingsEl.innerText = `${discount.toLocaleString()}원 할인 적용 중 (신년 혜택)`;
         }
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
